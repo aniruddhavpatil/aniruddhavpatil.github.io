@@ -27,6 +27,7 @@ const Image = () => {
   `)
 
   return <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+  // return <img src={`../../gatsby-astronaut.png`} style={{ "maxWidth": "300px" }} />
 }
 
 export default Image

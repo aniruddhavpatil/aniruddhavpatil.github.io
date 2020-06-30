@@ -16,7 +16,7 @@ const Container = ({ defKey, children }) => {
     }
   `)
 
-  let headerColor = "rebeccapurple"
+  let headerColor = "dimgray"
   return (
     <Layout>
       <Header
@@ -58,8 +58,9 @@ const Container = ({ defKey, children }) => {
       >
         <div style={{ maxWidth: "900px", margin: "0 auto" }}>{children}</div>
       </Content>
-      <Footer style={{ textAlign: "center" }}>
-        © {new Date().getFullYear()} made by alienCY ^__^
+      <Footer style={{ textAlign: "center", backgroundColor: headerColor, color: "white"}}>
+        {/* © {new Date().getFullYear()} */}
+        anipatil.com
       </Footer>
     </Layout>
   )
