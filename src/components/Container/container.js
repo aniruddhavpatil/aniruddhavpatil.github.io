@@ -2,10 +2,10 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import { Link } from "gatsby"
-import { Layout, Menu } from "antd"
+import { Layout, Menu} from "antd"
 const { Header, Footer, Content } = Layout
 
-const Container = ({ defKey, children }) => {
+const CustomContainer = ({ defKey, children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -16,18 +16,20 @@ const Container = ({ defKey, children }) => {
     }
   `)
 
-  let headerColor = "dimgray"
+  let headerColor = "Gray"
   return (
     <Layout>
       <Header
         style={{
-          position: "fixed",
-          zIndex: 1,
+          // position: "fixed",
+          // display: "flex",
+          height: "100vh",
           width: "100%",
+          zIndex: 1,
           backgroundColor: headerColor,
         }}
       >
-        <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+        <div style={{ maxWidth: "90%", margin: "0 auto" }}>
           <h1 style={{ margin: "margin 0", float: "left" }}>
             <Link to="/" style={{ color: "white" }}>
               {data.site.siteMetadata.title}
@@ -50,13 +52,14 @@ const Container = ({ defKey, children }) => {
       </Header>
       <Content
         style={{
-          padding: "24px 50px",
-          marginTop: 64,
+          // position: "fixed",
+          padding: "0px 50px",
+          // marginTop: 64,
           background: `#fff`,
-          minHeight: "100vh", //edit this to change minimum page height
+          minHeight: "calc(100vh - 64px)", //edit this to change minimum page height
         }}
       >
-        <div style={{ maxWidth: "900px", margin: "0 auto" }}>{children}</div>
+        <div style={{ height: "100vh",maxWidth: "80%", margin: "0 auto" }}>{children}</div>
       </Content>
       <Footer style={{ textAlign: "center", backgroundColor: headerColor, color: "white"}}>
         {/* © {new Date().getFullYear()} */}
@@ -65,8 +68,8 @@ const Container = ({ defKey, children }) => {
     </Layout>
   )
 }
-Container.propTypes = {
+CustomContainer.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default Container
+export default CustomContainer;

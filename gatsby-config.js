@@ -3,8 +3,8 @@ const lessToJson = require('less-to-json');
 module.exports = {
   siteMetadata: {
     title: "Aniruddha Patil",
-    description: `Kick off your next, great Gatsby project with this extra awesome ant design starter!`,
-    author: `@gatsbyjs + @alienCY + @aniruddhavpatil`,
+    description: `Personal website of Aniruddha Patil`,
+    author: `@anivpatil`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
